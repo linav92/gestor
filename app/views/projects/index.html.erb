@@ -1,29 +1,29 @@
 <h1>Crear Proyectos</h1>
-<form method="post" action="/projects/create">
-    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+
+<%= form_with(model: @project, url: "/projects/create", local: true) do |f|%>
     <div class=>
-    <label for="name">Nombre</label>
-        <input name="name"type="text" class="form-control" id="name" placeholder="Ingrese nombre">
+        <%= f.label :name, 'Nombre' %>
+        <%= f.text_field :name, placeholder: 'Ingrese nombre', class: 'form-control' %>
     </div>
     <div class="form-group">
-        <label for="description">Descripción</label>
-        <input name="description" type="text" class="form-control" id="description" placeholder="Ingrese la descripción">
+        <%= f.label :description, 'Descripción' %>
+        <%= f.text_field :description, placeholder: 'Ingrese la descripción', class: 'form-control' %>
     </div>
     <div class="form-group">
-        <label for="start_on">Fecha de comienzo</label>
-        <input name="start_on" type="date" class="form-control" id="start_on">
+        <%= f.label :start_on, 'Fecha de inicio' %>
+        <%= f.date_field :start_on, class: 'form-control' %>
     </div>
     <div class="form-group">
-        <label for="finish_on">Fecha de finalización</label>
-        <input name="finish_on" type="date" class="form-control" id="finish_on">
+        <%= f.label :finish_on, 'Fecha de finalización' %>
+        <%= f.date_field :finish_on, class: 'form-control' %>
     </div>
+
+
     <div class="form-group">
-        <label for="state">Estado</label>
-        <select name="states" id="state" class="form-control">
-            <option value="0">Propuesta</option>
-            <option value="1">En progreso</option>
-            <option value="2">Terminado</option>
-        </select>
+        <%= f.label :states, 'Estado' %>
+        <%= f.select :states, options_for_select([["Propuesta",0],["En_progreso",1],["Terminado",2]] ), {include_blank: true}, class: 'form-control' %>
+
     </div>
-    <button type="submit" class="btn btn-info">Guardar</button>
-</form>
+
+     <%= f.submit 'Guardar', class: 'btn btn-info' %>
+ <% end %>

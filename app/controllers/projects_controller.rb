@@ -4,7 +4,13 @@ class ProjectsController < ApplicationController
   end
 
   def dashboard
-    @projects = Project.all
+    if params[:states].present?
+      @projects=Project.where('states = ?', params[:states])
+      # @project=Project.where(states:params[:states]).all
+    else
+      @projects = Project.all
+    end
+    
   end
 
   def create

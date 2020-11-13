@@ -1,7 +1,11 @@
 <nav class="navbar navbar-light bg-light justify-content-between">
     <h1>Dashboard de Administración<a class="navbar-brand"></a></h1>
     <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar Estado" aria-label="Search" name="state">
+        <select name="states" id="states" class="form-control">  
+            <option value="0">Propuesta</option>
+            <option value="1">En progreso</option>
+            <option value="2">Terminado</option>
+        </select>
         <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Buscar</button>
     </form>
 </nav>

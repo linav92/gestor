@@ -21,7 +21,7 @@
 
     <div class="form-group">
         <%= f.label :states, 'Estado' %>
-        <%= f.select :states, options_for_select([["Propuesta",0],["En_progreso",1],["Terminado",2]] ), {include_blank: true}, class: 'form-control' %>
+        <%= f.select :states, options_for_select([['Propuesta','propuesta'],['En progreso','En_Progreso'],['Terminado','Terminado']] ), {include_blank: true}, class: 'form-control' %>
 
     </div>
 

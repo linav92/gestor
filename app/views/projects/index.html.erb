@@ -1,0 +1,29 @@
+<h1>Crear Proyectos</h1>
+<form method="post" action="/projects/create">
+    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+    <div class=>
+    <label for="name">Nombre</label>
+        <input name="name"type="text" class="form-control" id="name" placeholder="Ingrese nombre">
+    </div>
+    <div class="form-group">
+        <label for="description">Descripción</label>
+        <input name="description" type="text" class="form-control" id="description" placeholder="Ingrese la descripción">
+    </div>
+    <div class="form-group">
+        <label for="start_on">Fecha de comienzo</label>
+        <input name="start_on" type="date" class="form-control" id="start_on">
+    </div>
+    <div class="form-group">
+        <label for="finish_on">Fecha de finalización</label>
+        <input name="finish_on" type="date" class="form-control" id="finish_on">
+    </div>
+    <div class="form-group">
+        <label for="state">Estado</label>
+        <select name="states" id="state" class="form-control">
+            <option>Propuesta</option>
+            <option>En progreso</option>
+            <option>Terminado</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-info">Guardar</button>
+</form>
